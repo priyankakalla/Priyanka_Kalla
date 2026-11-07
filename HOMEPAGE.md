@@ -8,6 +8,8 @@ Google Fonts requires an internet connection; the page uses fallback fonts when 
 
 ## Enquiry delivery
 
-Both forms POST name, phone, and project details to FormSubmit's free AJAX endpoint for `priyankakalla@outlook.com`. No email application is needed. The visitor sees success only when the provider accepts the request; failed submissions keep the entered details for retry.
+Both forms use the official `@formspree/react` integration with form ID `mjyydekn` and endpoint `https://formspree.io/f/mjyydekn`. Name and phone are required. The detailed contact form also accepts an optional email address, service selection, and message. Submissions include their location on the page and a spam honeypot. No email application is needed.
 
-Submit an initial enquiry, then check Outlook (including spam) for FormSubmit's activation email and follow its activation link. Submit a second enquiry to verify delivery after activation. Provider acceptance alone does not confirm inbox delivery. A live internet connection and access to FormSubmit are required; if a browser or provider blocks submissions from a directly opened file, serve the portfolio with `npm.cmd run dev` or publish it over HTTPS.
+In the Formspree dashboard, confirm that this form's notification recipient is `priyankakalla@outlook.com`, complete any required email verification, and allow the published website domain if domain restrictions are enabled. Submit an enquiry from the published site and check both the Formspree submissions dashboard and Outlook (including spam) to verify delivery. Provider acceptance alone does not confirm inbox delivery. A live internet connection and access to Formspree are required; if submissions from a directly opened file are blocked, serve the portfolio with `npm.cmd run dev` or publish it over HTTPS.
+
+Each form has its own sending, success, and error state. Submit buttons are disabled while sending; failed submissions retain entered details. Successful submissions show a confirmation and a button to start another enquiry.
